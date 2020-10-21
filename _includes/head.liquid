@@ -1,0 +1,15 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{{ meta.title | default: title | default: meta_defaults.title }}</title>
+<meta property="og:title" content="{{ meta.title | default: title | default: meta_defaults.title }}">
+<meta name="description" property="og:description" content="{{ meta.description | default: description | default: meta_defaults.description }}">
+<meta name="author" content="{{ meta.author | default: author | default: meta_defaults.author }}">
+
+{% meta_tags meta.properties, meta_defaults.properties %}
+
+<link rel="stylesheet" href="/assets/css/main.min.css" type="text/css" media="all">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+{% include favicons.liquid %}

@@ -1,0 +1,35 @@
+<nav class="nav js-nav">
+  <div class="nav__container">
+    <a class="nav__logo-link" href="/">
+      {% svg_sprite "logo-bear", "nav__logo" %}
+    </a>
+    <button class="button--xs nav__open-menu nav__open-menu--show js-open-menu" type="button">
+      {% svg_sprite "menu", "nav__open-menu-icon" %}
+    </button>
+    <button class="button--xs nav__close-menu js-close-menu" type="button">
+      {% svg_sprite "close", "nav__close-menu-icon" %}
+    </button>
+    <div class="nav__menus no-transition js-menu">
+      <ul class="nav__menu">
+        {% nav_menu_item "Games", "/games/" %}
+        {% nav_menu_item "Store", "/#store" %}
+        {% nav_menu_item "About", "/about/" %}
+        {% nav_menu_item "Press", "/news/" %}
+        {% nav_menu_item "Blog", "/blog/" %}
+        {% nav_menu_item "Contact", "/#contact" %}
+      </ul>
+      <ul class="nav__social">
+        <li class="nav__social-item">
+          <a class="nav__social-link" href="https://twitter.com/waterbeargames" target="_blank">
+            {% svg_sprite "social_twitter", "nav__social-icon" %}
+          </a>
+        </li>
+        <li class="nav__social-item">
+          <a class="nav__social-link" href="https://facebook.com/waterbeargames" target="_blank">
+            {% svg_sprite "social_facebook", "nav__social-icon" %}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

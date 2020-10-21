@@ -1,0 +1,25 @@
+/* =========================================================================
+   Global
+   ========================================================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  // Part of making the footer stick to the bottom
+  // See _components/_footer.scss
+  min-height: 100vh;
+}
+
+main {
+  padding-top: $small-nav-height;
+
+  @include breakpoint($size-md) {
+    padding-top: $large-nav-height;
+  }
+}

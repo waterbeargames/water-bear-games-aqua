@@ -1,0 +1,11 @@
+/* =========================================================================
+   Miscellaneous
+   ========================================================================= */
+
+.no-transition {
+  transition: none !important;
+}
+
+%default-transition {
+  transition: all 0.4s ease;
+}

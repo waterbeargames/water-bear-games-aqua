@@ -1,0 +1,5 @@
+.env
+.sass-cache
+_site
+linters
+node_modules

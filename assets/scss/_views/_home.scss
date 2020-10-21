@@ -1,0 +1,70 @@
+/* =========================================================================
+   Home
+   ========================================================================= */
+
+.home-logo {
+  @include svg-hack(500, 484);
+}
+
+.home-actions {
+  display: flex;
+  position: relative;
+  height: 100%;
+
+  &__container {
+    flex: 0 0 (100% / 3);
+    padding: space(1);
+
+    @include breakpoint($size-md) {
+      position: absolute;
+
+      &--primary {
+        top: -2%;
+        right: 48%;
+        left: 0;
+      }
+
+      &--secondary {
+        top: 12%;
+        right: 0;
+        left: 58%;
+      }
+
+      &--ternary {
+        top: 57%;
+        right: 29%;
+        left: 29%;
+      }
+    }
+
+    @include breakpoint($size-lg) {
+      &--primary {
+        right: 51%;
+      }
+
+      &--secondary {
+        left: 60%;
+      }
+
+      &--ternary {
+        right: 31%;
+        left: 31%;
+      }
+    }
+  }
+}
+
+.salmon-art {
+  @include svg-hack(325, 278);
+  width: 100%;
+}
+
+.bee-art {
+  @include svg-hack(325, 287);
+  width: 100%;
+}
+
+.marcus-and-cara-meeples {
+  @include svg-hack(325, 343);
+  width: 100%;
+}

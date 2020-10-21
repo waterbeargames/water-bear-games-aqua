@@ -1,0 +1,213 @@
+/* =========================================================================
+   Navigation
+   ========================================================================= */
+
+$logo-aspect-ratio: 276 / 325;
+
+$small-logo-height: ($small-nav-height - space(2));
+$small-logo-width: ($small-logo-height / $logo-aspect-ratio);
+$large-logo-height: ($large-nav-height - space(2));
+$large-logo-width: ($large-logo-height / $logo-aspect-ratio);
+
+$nav-breakpoint-1: $size-md;
+$nav-breakpoint-2: $size-lg;
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $small-nav-height;
+  transition: box-shadow 0.4s ease;
+  background-color: rgba(#fff, 0.95);
+  box-shadow: 0 2px 2px 0 rgba(#000, 0.05);
+  z-index: $z-nav;
+
+  @include breakpoint($size-md) {
+    height: $large-nav-height;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: $max-width;
+    height: 100%;
+    margin: 0 auto;
+    padding: space(1) space(2);
+  }
+
+  &__logo-link {
+    display: block;
+    fill: $blue;
+
+    &:hover, &:focus {
+      fill: $teal;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: $small-logo-width;
+    height: $small-logo-height;
+
+    @include breakpoint($size-md) {
+      width: $large-logo-width;
+      height: $large-logo-height;
+    }
+  }
+
+  &__open-menu, &__close-menu {
+    display: none;
+    fill: #fff;
+
+    &--show {
+      display: block;
+    }
+
+    &-icon {
+      display: block;
+    }
+  }
+
+  &__open-menu-icon, &__close-menu-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__menus {
+    display: flex;
+    position: absolute;
+    top: $small-nav-height;
+    left: 0;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - #{$small-nav-height});
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+
+    &--show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__menu, &__social {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+
+  &__menu-item {
+    margin: 0;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  &__menu-link {
+    display: block;
+    position: relative;
+    padding: space(1);
+    color: $blue;
+
+    &:hover, &:focus {
+      background-color: $blue;
+      color: #fff;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: space(1);
+  }
+
+  &__social-item {
+    margin: 0 space(1);
+  }
+
+  &__social-link {
+    display: block;
+    fill: $blue;
+
+    &:hover, &:focus {
+      fill: $teal;
+    }
+  }
+
+  &__social-icon {
+    display: block;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+// From hamburger menu to full menu
+@include breakpoint($nav-breakpoint-1) {
+  .nav {
+    &__open-menu, &__close-menu {
+      display: none;
+    }
+
+    &__menus {
+      position: static;
+      flex-direction: row;
+      justify-content: flex-end;
+      height: auto;
+      background-color: transparent;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &__menu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    &__menu-item {
+      margin: 0 0.2rem;
+      padding: 0.2rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__menu-link {
+      padding: 3px 0;
+
+      &:hover, &:focus {
+        background-color: transparent;
+        color: $teal;
+      }
+    }
+
+    &__social {
+      margin-top: 0;
+      margin-left: space(1);
+    }
+
+    &__social-item {
+      margin: 0 0.2rem;
+    }
+  }
+}
+
+// Add more generous spacing between elements in the menu
+@include breakpoint($nav-breakpoint-2) {
+  .nav {
+    &__menu-item, &__social-item {
+      margin: 0 space(1);
+    }
+  }
+}

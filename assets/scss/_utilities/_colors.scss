@@ -1,0 +1,22 @@
+/* =========================================================================
+   Colors
+   ========================================================================= */
+
+$colors: (
+  'blue': $blue,
+  'teal': $teal,
+  'yellow': $yellow,
+  'gray': $gray
+);
+
+@each $name, $color in $colors {
+  .#{$name}-background {
+    background-color: $color;
+  }
+
+  .#{$name}-text {
+    &, h1, h2, h3, h4, h5, h6, p, li, th, td, address {
+      color: $color;
+    }
+  }
+}

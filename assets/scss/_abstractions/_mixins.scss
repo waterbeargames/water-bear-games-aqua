@@ -1,0 +1,57 @@
+// =========================================================================
+// Mixins
+// =========================================================================
+
+// usage: @include breakpoint(480px) { your styles here }
+@mixin breakpoint($point) {
+  @media all and (min-width: $point) {
+    @content;
+  }
+}
+
+@mixin make-responsive-classes($point) {
+  @if $point == 0 {
+    @content;
+  } @else {
+    @include breakpoint($point) {
+      @content;
+    }
+  }
+}
+
+@mixin glow-on-focus($color) {
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $color;
+  }
+}
+
+// Get a space step from the $spacing list
+// e.g. "padding: space(4)" compiles to "padding: 3rem"
+// $spacing list is defined in _abstractions/_variables.scss
+@function space($i) {
+  @return map-get($spacing, $i);
+}
+
+// This is a hack to get an SVG to maintain its aspect ratio.
+@mixin svg-hack($width, $height) {
+  position: relative;
+  height: 0;
+  padding-bottom: (100% * $height / $width);
+
+  &__svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+%section-padding {
+  padding: space(3) space(2);
+
+  @include breakpoint($size-md) {
+    padding: space(3);
+  }
+}

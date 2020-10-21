@@ -1,0 +1,19 @@
+# Title attributes for SVGs, for accessibility
+bee:
+  title: Bee
+close:
+  title: Close
+logo:
+  title: Water Bear Games
+logo-bear:
+  title: Water Bear Games
+marcus-and-cara:
+  title: Marcus and Cara
+menu:
+  title: Menu
+salmon:
+  title: Salmon
+social_facebook:
+  title: Facebook
+social_twitter:
+  title: Twitter

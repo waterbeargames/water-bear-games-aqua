@@ -1,0 +1,22 @@
+/* =========================================================================
+   Header
+   ========================================================================= */
+
+.header {
+  @extend %section-padding;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding-right: 0;
+  padding-left: 0;
+  text-align: center;
+
+  &--xl {
+    min-height: calc(80vh - #{$small-nav-height});
+
+    @include breakpoint($size-md) {
+      min-height: calc(100vh - #{$large-nav-height});
+    }
+  }
+}

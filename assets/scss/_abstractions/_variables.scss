@@ -1,0 +1,68 @@
+// =========================================================================
+// Variables
+// =========================================================================
+
+// Sizes
+// Based on 1rem = 16px
+$size-sm: 30rem; // 480px
+$size-md: 40rem; // 640px
+$size-lg: 54rem; // 864px
+$size-xl: 64rem; // 1024px
+
+$max-width: 70rem; // 1120px
+
+$small-nav-height: 3.75rem;
+$large-nav-height: 5rem;
+
+$sizes: (
+  '': 0,
+  '-sm': $size-sm,
+  '-md': $size-md,
+  '-lg': $size-lg,
+  '-xl': $size-xl
+);
+
+// Spacing units
+$space-unit: 0.75rem;
+
+$spacing: (
+  auto: auto,
+  0:    0,
+  1:    $space-unit,
+  2:    $space-unit * 2,
+  3:    $space-unit * 3,
+  4:    $space-unit * 4,
+  6:    $space-unit * 6,
+  8:    $space-unit * 8,
+  12:   $space-unit * 12,
+  16:   $space-unit * 16
+);
+
+// Font families
+$open-sans: 'Open Sans', sans-serif;
+
+// Font weights so we don't have to remember stuff like "semibold" is 600, etc.
+$hairline: 100;
+$thin: 200;
+$light: 300;
+$normal: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$extrabold: 800;
+
+// Colors~!
+$blue: #06539d;
+$teal: #0faeb2;
+$yellow: #f7e992;
+$gray: #dbe4eb;
+
+$headline-color: $blue;
+$body-color: #4d4d4d;
+
+// Border radius
+$border-radius: 10px;
+
+// Z indexes are in one place so we can remember where things are layered and
+// not do silly stuff like z-index: 999999 just to get above something
+$z-nav: 1;
