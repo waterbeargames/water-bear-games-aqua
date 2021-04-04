@@ -10,7 +10,15 @@
   justify-content: center;
   padding-right: 0;
   padding-left: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   text-align: center;
+
+  @include breakpoint($size-md) {
+    padding-top: space(3);
+    padding-bottom: space(3);
+  }
 
   &--xl {
     min-height: calc(80vh - #{$small-nav-height});

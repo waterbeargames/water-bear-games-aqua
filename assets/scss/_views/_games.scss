@@ -1,0 +1,63 @@
+/* =========================================================================
+   Games
+   ========================================================================= */
+
+$games: (
+  'acquire': (
+    'color': #3155a5,
+    'dimensions': (325, 386)
+  ),
+  'beeeees': (
+    'color': #764c24,
+    'dimensions': (941, 398)
+  ),
+  'cat-quest': (
+    'color': #38066b,
+    'dimensions': (325, 132)
+  ),
+  'discount-salmon': (
+    'color': #f3aba8,
+    'dimensions': (325, 225)
+  ),
+  'kingmaker': (
+    'color': #c09b24,
+    'dimensions': (325, 99.91)
+  ),
+  'letter-go': (
+    'color': #db3a89,
+    'dimensions': (612, 239.63)
+  ),
+  'nom-nom-pretzel': (
+    'color': #41210a,
+    'dimensions': (325, 246)
+  )
+);
+
+@each $game, $attrs in $games {
+  $color: map-get($attrs, 'color');
+  $dimensions: map-get($attrs, 'dimensions');
+
+  .header--#{$game} {
+    background-image: url(/assets/images/games/banner_#{$game}.jpg);
+  }
+
+  .game-logo--#{$game} {
+    background-color: rgba($color, 0.9);
+  }
+
+  .#{$game}-logo {
+    @include svg-hack($dimensions...);
+  }
+}
+
+.game-logo {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  padding: space(4);
+  border-radius: 50%;
+  fill: #fff;
+}

@@ -171,7 +171,7 @@ $nav-breakpoint-2: $size-lg;
     }
 
     &__menu-item {
-      margin: 0 0.2rem;
+      margin: 0 0.3rem;
       padding: 0.2rem;
 
       &:first-child {
@@ -198,7 +198,7 @@ $nav-breakpoint-2: $size-lg;
     }
 
     &__social-item {
-      margin: 0 0.2rem;
+      margin: 0 0.3rem;
     }
   }
 }
@@ -206,8 +206,13 @@ $nav-breakpoint-2: $size-lg;
 // Add more generous spacing between elements in the menu
 @include breakpoint($nav-breakpoint-2) {
   .nav {
-    &__menu-item, &__social-item {
+    &__menu-item {
       margin: 0 space(1);
+      font-size: 1rem;
+    }
+
+    &__social-item {
+      margin: 0 (space(1) / 2);
     }
   }
 }

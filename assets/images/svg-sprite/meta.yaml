@@ -1,6 +1,10 @@
 # Title attributes for SVGs, for accessibility
+acquire:
+  title: Acquire
 bee:
   title: Bee
+beeeees:
+  title: BEEEEES!
 close:
   title: Close
 logo:

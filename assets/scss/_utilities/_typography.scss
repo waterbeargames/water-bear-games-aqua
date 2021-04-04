@@ -1,0 +1,45 @@
+/* =========================================================================
+   Typography Utilities
+   ========================================================================= */
+
+// Makes text align classes for different break points
+@mixin text-align-classes($suffix) {
+  .text-align {
+    &-left#{$suffix} {
+      text-align: left;
+    }
+
+    &-right#{$suffix} {
+      text-align: right;
+    }
+
+    &-center#{$suffix} {
+      text-align: center;
+    }
+  }
+}
+
+// $sizes is defined in _abstractions/_variables.scss
+@each $size, $value in $sizes {
+  @include make-responsive-classes($value) {
+    @include text-align-classes($size);
+  }
+}
+
+.weight {
+  &-300 {
+    font-weight: $light;
+  }
+
+  &-400 {
+    font-weight: $normal;
+  }
+
+  &-600 {
+    font-weight: $semibold;
+  }
+
+  &-700 {
+    font-weight: $bold;
+  }
+}

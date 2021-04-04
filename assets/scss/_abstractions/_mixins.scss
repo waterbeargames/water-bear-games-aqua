@@ -36,6 +36,7 @@
 // This is a hack to get an SVG to maintain its aspect ratio.
 @mixin svg-hack($width, $height) {
   position: relative;
+  width: 100%;
   height: 0;
   padding-bottom: (100% * $height / $width);
 
@@ -52,6 +53,6 @@
   padding: space(3) space(2);
 
   @include breakpoint($size-md) {
-    padding: space(3);
+    padding: space(6) space(3);
   }
 }

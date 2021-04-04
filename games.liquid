@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<section class="section section--padded text-align-center">
+  <h2>Games</h2>
+
+  <ul>
+    {% for game in collections.games %}
+      <li><a href="{{ game.url }}">{{ game.data.name }}</a></li>
+    {% endfor %}
+  </ul>
+</section>

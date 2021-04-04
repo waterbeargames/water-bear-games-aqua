@@ -34,6 +34,9 @@
   }
 
   @include breakpoint($size-md) {
+    padding-top: space(3);
+    padding-bottom: space(3);
+
     p {
       font-size: 0.875rem;
     }

@@ -42,6 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, .h1 {
+  color: $headline-color;
   font-size: 1.875rem;
   font-weight: $light;
   letter-spacing: 0.1rem;
@@ -56,6 +57,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
+  color: $headline-color;
   font-size: 1.5rem;
   font-weight: $light;
   letter-spacing: 0.1rem;
@@ -70,6 +72,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
+  color: $headline-color;
   font-size: 1.25rem;
   font-weight: $normal;
   letter-spacing: 0;
@@ -84,6 +87,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
+  color: $headline-color;
   font-size: 1rem;
   font-weight: $semibold;
   letter-spacing: 0;
@@ -98,6 +102,7 @@ h4, .h4 {
 }
 
 h5, .h5 {
+  color: $headline-color;
   font-size: 0.875rem;
   font-weight: $semibold;
   letter-spacing: 0;
@@ -112,6 +117,7 @@ h5, .h5 {
 }
 
 h6, .h6 {
+  color: $body-color;
   font-size: 0.75rem;
   font-weight: $normal;
   letter-spacing: 0;
@@ -126,11 +132,16 @@ h6, .h6 {
 }
 
 body, p, .p, li, th, td, address {
+  color: $body-color;
   font-size: 0.875rem;
   letter-spacing: 0;
 
   @include breakpoint($size-md) {
     font-size: 1rem;
+  }
+
+  @include breakpoint($size-lg) {
+    font-size: 1.125rem;
   }
 }
 
@@ -151,7 +162,7 @@ p, .p, address, blockquote {
   margin: space(2) 0;
 
   @include breakpoint($size-md) {
-    margin: space(4) 0;
+    margin: space(2) 0;
   }
 }
 
