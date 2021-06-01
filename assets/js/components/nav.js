@@ -2,6 +2,35 @@
    Navigation
    ========================================================================= */
 
+// Hide nav when scrolling down, show nav when scrolling up
+
+const body = document.querySelector('body');
+const nav = document.querySelector('.js-nav');
+let threshold = nav.clientHeight * 2;
+
+if (body.classList.contains('page-index')) {
+  threshold = document.querySelector('.header').clientHeight;
+}
+
+let navIsHidden = false;
+let oldScrollTop = window.pageYOffset;
+let newScrollTop = oldScrollTop;
+
+window.addEventListener('scroll', e => {
+  newScrollTop = window.pageYOffset;
+  navIsHidden = nav.classList.contains('nav--hide');
+
+  if (newScrollTop < threshold) return false;
+
+  if (newScrollTop > oldScrollTop && !navIsHidden) {
+    nav.classList.add('nav--hide');
+  } else if (newScrollTop < oldScrollTop && navIsHidden) {
+    nav.classList.remove('nav--hide');
+  }
+
+  oldScrollTop = newScrollTop;
+});
+
 // Open/close menu for small screens
 
 const openTrigger = document.querySelector('.js-open-menu');

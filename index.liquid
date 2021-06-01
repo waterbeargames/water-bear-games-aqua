@@ -12,7 +12,7 @@ layout: default
     <div class="col-md-6 p-1">
       <div class="home-actions">
         <div class="home-actions__container home-actions__container--primary">
-          <a class="circle-button circle-button--yellow" href="https://discountsalmon.com/">
+          <a class="circle-button circle-button--with-label circle-button--yellow" href="https://discountsalmon.com/">
             <div class="circle-button__content">
               <div class="salmon-art">
                 {% svg_sprite "salmon", "salmon-art__svg" %}
@@ -22,7 +22,7 @@ layout: default
           </a>
         </div>
         <div class="home-actions__container home-actions__container--secondary">
-          <a class="circle-button circle-button--teal" href="/games/">
+          <a class="circle-button circle-button--with-label circle-button--teal" href="/games/">
             <div class="circle-button__content">
               <div class="bee-art">
                 {% svg_sprite "bee", "bee-art__svg" %}
@@ -32,7 +32,7 @@ layout: default
           </a>
         </div>
         <div class="home-actions__container home-actions__container--ternary">
-          <a class="circle-button circle-button--gray" href="/#welcome">
+          <a class="circle-button circle-button--with-label circle-button--gray" href="/#welcome">
             <div class="circle-button__content">
               <div class="marcus-and-cara-meeples">
                 {% svg_sprite "marcus-and-cara", "marcus-and-cara-meeples__svg" %}
@@ -45,3 +45,37 @@ layout: default
     </div>
   </div>
 </header>
+
+<section id="welcome" class="section section--padded gray-background">
+  <div class="max-width text-align-center">
+    <h2>Welcome to Water Bear Games!</h2>
+    <p>Check out our most popular games!</p>
+
+    <ul class="max-width game-list game-list--featured mt-4">
+      {% for game in collections.featuredGames %}
+        <li class="game-list__item">
+          <a class="circle-button circle-button--game circle-button--{{ game.fileSlug }}" href="{{ game.url }}" title="{{ game.data.name }}">
+            <div class="circle-button__content">
+              {% game_logo game.fileSlug %}
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="about" class="section section--padded relative">
+  <div class="background-bear-container">
+    <div class="background-bear">
+      {% svg_sprite "logo-bear", "background-bear__svg" %}
+    </div>
+  </div>
+  <div class="max-width max-width--medium relative">
+    <h2 class="text-align-center">Who We Are</h2>
+    <p>Water Bear Games is a tabletop games company located in Omaha, Nebraska. Our mission statement is, &ldquo;Create games to bring people together irl.&rdquo; As much fun as it is to play video games online, we think the best kind of get-togethers are ones where you hang out with your friends outside of your monitors. By bringing together the nerdiness of games and the social interaction of parties, board games are the best!</p>
+    <div class="text-align-center">
+      <a class="button" href="/about">Learn More About Us</a>
+    </div>
+  </div>
+</section>

@@ -12,7 +12,11 @@ const {
 } = require('./scripts/eleventy/collections.jsx')
 
 const {
-  currentYear, metaTags, navMenuItem, svgSprite
+  bodyClass
+} = require('./scripts/eleventy/filters.jsx');
+
+const {
+  currentYear, gameLogo, metaTags, navMenuItem, svgSprite
 } = require('./scripts/eleventy/shortcodes.jsx');
 
 module.exports = function(eleventyConfig) {
@@ -21,8 +25,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection('featuredGames', featuredGames);
   eleventyConfig.addCollection('unfeaturedGames', unfeaturedGames);
 
+  // Filters
+  eleventyConfig.addFilter('body_class', bodyClass);
+
   // Shortcodes
   eleventyConfig.addShortcode('current_year', currentYear);
+  eleventyConfig.addShortcode('game_logo', gameLogo);
   eleventyConfig.addShortcode('meta_tags', metaTags);
   eleventyConfig.addShortcode('nav_menu_item', navMenuItem);
   eleventyConfig.addShortcode('svg_sprite', svgSprite);

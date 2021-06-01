@@ -1,4 +1,6 @@
-@import "../../node_modules/normalize.css/normalize";
+@use 'sass:math';
+
+@import "~normalize.css/normalize";
 
 @import "_abstractions/_variables";
 @import "_abstractions/_mixins";
@@ -9,6 +11,7 @@
 @import "_global/_forms";
 
 @import "_components/_buttons";
+@import "_components/_circle-button";
 @import "_components/_footer";
 @import "_components/_header";
 @import "_components/_nav";
@@ -17,6 +20,7 @@
 @import "_views/_games";
 @import "_views/_home";
 
+@import "_utilities/_backgrounds";
 @import "_utilities/_colors";
 @import "_utilities/_flexbox";
 @import "_utilities/_grid";

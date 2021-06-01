@@ -65,4 +65,5 @@ $border-radius: 10px;
 
 // Z indexes are in one place so we can remember where things are layered and
 // not do silly stuff like z-index: 999999 just to get above something
-$z-nav: 1;
+$z-circle-button-content: 1;
+$z-nav: 2;

@@ -19,11 +19,11 @@
   }
 
   .w-third#{$suffix} {
-    width: (100% / 3);
+    width: math.div(100%, 3);
   }
 
   .w-two-thirds#{$suffix} {
-    width: (100% / 3 * 2);
+    width: (math.div(100%, 3) * 2);
   }
 }
 
@@ -41,5 +41,9 @@
 
   &--medium {
     max-width: $size-md;
+  }
+
+  &--large {
+    max-width: $size-lg;
   }
 }

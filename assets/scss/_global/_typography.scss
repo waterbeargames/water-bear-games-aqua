@@ -97,7 +97,7 @@ h4, .h4 {
   }
 
   @include breakpoint($size-md) {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -112,7 +112,7 @@ h5, .h5 {
   }
 
   @include breakpoint($size-md) {
-    font-size: 1.125rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -141,7 +141,7 @@ body, p, .p, li, th, td, address {
   }
 
   @include breakpoint($size-lg) {
-    font-size: 1.125rem;
+    font-size: 1.2rem;
   }
 }
 

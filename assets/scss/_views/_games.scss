@@ -4,37 +4,45 @@
 
 $games: (
   'acquire': (
-    'color': #3155a5,
+    'color': #3155a5,           // dark blue
+    'color2': #329453,          // green
     'dimensions': (325, 386)
   ),
   'beeeees': (
-    'color': #764c24,
+    'color': #764c24,           // brown
+    'color2': #ffc20e,          // yellow
     'dimensions': (941, 398)
   ),
   'cat-quest': (
-    'color': #38066b,
+    'color': #38066b,           // purple
+    'color2': #38066b,          // purple
     'dimensions': (325, 132)
   ),
   'discount-salmon': (
-    'color': #f3aba8,
+    'color': #f3aba8,           // salmon
+    'color2': #bd7082,          // dark salmon
     'dimensions': (325, 225)
   ),
   'kingmaker': (
-    'color': #c09b24,
+    'color': #c09b24,           // yellow
+    'color2': #b33636,          // red
     'dimensions': (325, 99.91)
   ),
   'letter-go': (
-    'color': #db3a89,
+    'color': #db3a89,           // dark pink
+    'color2': #0079ba,          // blue
     'dimensions': (612, 239.63)
   ),
   'nom-nom-pretzel': (
-    'color': #41210a,
+    'color': #41210a,           // brown
+    'color2': #ff9b05,          // orange
     'dimensions': (325, 246)
   )
 );
 
 @each $game, $attrs in $games {
   $color: map-get($attrs, 'color');
+  $color2: map-get($attrs, 'color2');
   $dimensions: map-get($attrs, 'dimensions');
 
   .header--#{$game} {
@@ -47,6 +55,52 @@ $games: (
 
   .#{$game}-logo {
     @include svg-hack($dimensions...);
+  }
+
+  .circle-button--#{$game} {
+    background-image: url(/assets/images/games/thumb_#{$game}.jpg);
+    box-shadow: inset 0 0 20px $color2;
+
+    &::before {
+      background-color: rgba($color2, 0.9);
+    }
+
+    &::after {
+      background-color: rgba($color2, 0.5);
+    }
+
+    &:hover {
+      box-shadow: none;
+
+      &::before {
+        background-color: rgba($color2, 0.1);
+      }
+
+      &::after {
+        background-color: rgba($color2, 0.8);
+      }
+    }
+  }
+}
+
+.game-list {
+  display: grid;
+  padding: 0;
+  list-style: none;
+  gap: space(1);
+  grid-template-columns: repeat(2, 1fr);
+
+  &__item {
+    margin: 0;
+  }
+
+  @include breakpoint($size-md) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: space(2);
+
+    &--featured {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
 

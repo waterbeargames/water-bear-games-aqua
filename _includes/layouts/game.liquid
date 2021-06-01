@@ -4,10 +4,7 @@ layout: default
 
 <header class="header header--{{ page.fileSlug }}">
   <div class="game-logo game-logo--{{ page.fileSlug }}">
-    <div class="{{ page.fileSlug }}-logo">
-      {% assign sprite_class = page.fileSlug | append: "-logo__svg" %}
-      {% svg_sprite page.fileSlug, sprite_class %}
-    </div>
+    {% game_logo page.fileSlug %}
   </div>
 </header>
 

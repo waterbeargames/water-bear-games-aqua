@@ -3,11 +3,29 @@ layout: default
 ---
 
 <section class="section section--padded text-align-center">
-  <h2>Games</h2>
+  <h2>Featured Games</h2>
+  <ul class="max-width game-list game-list--featured">
+    {% for game in collections.featuredGames %}
+      <li class="game-list__item">
+        <a class="circle-button circle-button--game circle-button--{{ game.fileSlug }}" href="{{ game.url }}" title="{{ game.data.name }}">
+          <div class="circle-button__content">
+            {% game_logo game.fileSlug %}
+          </div>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
 
-  <ul>
-    {% for game in collections.games %}
-      <li><a href="{{ game.url }}">{{ game.data.name }}</a></li>
+  <h2>More Games</h2>
+  <ul class="max-width game-list">
+    {% for game in collections.unfeaturedGames %}
+      <li class="game-list__item">
+        <a class="circle-button circle-button--game circle-button--{{ game.fileSlug }}" href="{{ game.url }}" title="{{ game.data.name }}">
+          <div class="circle-button__content">
+            {% game_logo game.fileSlug %}
+          </div>
+        </a>
+      </li>
     {% endfor %}
   </ul>
 </section>

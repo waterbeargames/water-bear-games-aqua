@@ -10,8 +10,8 @@ const games = collectionApi => {
 
 // Games that are not featured
 const unfeaturedGames = collectionApi => {
-  return collectionApi.getFilteredByGlob('games/**').reverse().
-    filter(g => {
+  return collectionApi.getFilteredByGlob('games/**').reverse()
+    .filter(g => {
       const tags = g.data.tags || [];
       return !tags.includes('featured');
     });

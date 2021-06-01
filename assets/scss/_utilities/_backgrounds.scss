@@ -1,0 +1,22 @@
+/* =========================================================================
+   Backgrounds
+   ========================================================================= */
+
+.background-bear-container {
+  position: absolute;
+  top: space(1);
+  right: 0;
+  bottom: space(1);
+  left: 0;
+}
+
+.background-bear {
+  height: 100%;
+  opacity: 0.2;
+  fill: $gray;
+
+  &__svg {
+    width: 100%;
+    height: 100%;
+  }
+}

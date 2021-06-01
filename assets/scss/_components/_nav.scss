@@ -2,12 +2,12 @@
    Navigation
    ========================================================================= */
 
-$logo-aspect-ratio: 276 / 325;
+$logo-aspect-ratio: math.div(276, 325);
 
 $small-logo-height: ($small-nav-height - space(2));
-$small-logo-width: ($small-logo-height / $logo-aspect-ratio);
+$small-logo-width: math.div($small-logo-height, $logo-aspect-ratio);
 $large-logo-height: ($large-nav-height - space(2));
-$large-logo-width: ($large-logo-height / $logo-aspect-ratio);
+$large-logo-width: math.div($large-logo-height, $logo-aspect-ratio);
 
 $nav-breakpoint-1: $size-md;
 $nav-breakpoint-2: $size-lg;
@@ -17,13 +17,38 @@ $nav-breakpoint-2: $size-lg;
   top: 0;
   width: 100%;
   height: $small-nav-height;
-  transition: box-shadow 0.4s ease;
+  transition: box-shadow 0.4s ease, top 0.1s ease;
   background-color: rgba(#fff, 0.95);
   box-shadow: 0 2px 2px 0 rgba(#000, 0.05);
   z-index: $z-nav;
 
+  &--hide {
+    top: -$small-nav-height;
+    box-shadow: none;
+  }
+
+  &--no-logo {
+    .nav__logo {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &--no-shadow {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  &--no-transition {
+    transition: none;
+  }
+
   @include breakpoint($size-md) {
     height: $large-nav-height;
+
+    &--hide {
+      top: -$large-nav-height;
+    }
   }
 
   &__container {
@@ -46,9 +71,12 @@ $nav-breakpoint-2: $size-lg;
   }
 
   &__logo {
+    @extend %default-transition;
     display: block;
     width: $small-logo-width;
     height: $small-logo-height;
+    opacity: 1;
+    visibility: visible;
 
     @include breakpoint($size-md) {
       width: $large-logo-width;
@@ -212,7 +240,7 @@ $nav-breakpoint-2: $size-lg;
     }
 
     &__social-item {
-      margin: 0 (space(1) / 2);
+      margin: 0 math.div(space(1), 2);
     }
   }
 }

@@ -1,0 +1,111 @@
+/* =========================================================================
+   Circle Buttons
+   ========================================================================= */
+
+.circle-button {
+  @extend %default-transition;
+  display: block;
+  position: relative;
+  height: 0;
+  padding: 50% 0;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+
+  &__content {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 20%;
+    bottom: 0;
+    left: 20%;
+    align-items: center;
+    justify-content: center;
+    z-index: $z-circle-button-content;
+  }
+
+  &__label {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: math.div(space(1), 2);
+    color: $blue;
+    font-size: 1rem;
+    font-weight: $semibold;
+
+    @include breakpoint($size-md) {
+      font-size: 1rem;
+    }
+
+    @include breakpoint($size-lg) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &:hover, &:focus {
+    transform: scale(1.05);
+
+    .circle-button__label {
+      color: $teal;
+    }
+  }
+
+  &--with-label {
+    margin-bottom: space(4);
+  }
+
+  &--yellow {
+    background-color: $yellow;
+
+    &:hover, &:focus {
+      box-shadow: 0 0 0 space(1) rgba($yellow, 0.5);
+    }
+  }
+
+  &--teal {
+    background-color: $teal;
+
+    &:hover, &:focus {
+      box-shadow: 0 0 0 space(1) rgba($teal, 0.5);
+    }
+  }
+
+  &--gray {
+    background-color: $gray;
+
+    &:hover, &:focus {
+      box-shadow: 0 0 0 space(1) rgba($gray, 0.5);
+    }
+  }
+
+  &--game {
+    fill: #fff;
+
+    &::before, &::after {
+      @extend %default-transition;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 50%;
+      content: '';
+    }
+
+    &::before {
+      mix-blend-mode: color;
+    }
+
+    &:hover {
+      &::after {
+        top: 10%;
+        right: 10%;
+        bottom: 10%;
+        left: 10%;
+      }
+    }
+  }
+}

@@ -12,7 +12,7 @@
   height: 100%;
 
   &__container {
-    flex: 0 0 (100% / 3);
+    flex: 0 0 math.div(100%, 3);
     padding: space(1);
 
     @include breakpoint($size-md) {

@@ -14,16 +14,16 @@
 @mixin make-columns($prefix) {
   @for $i from 1 through 12 {
     .col#{$prefix}-#{$i} {
-      flex: 0 0 (100% / 12 * $i);
-      max-width: (100% / 12 * $i);
+      flex: 0 0 (math.div(100%, 12) * $i);
+      max-width: (math.div(100%, 12) * $i);
     }
 
     .offset#{$prefix}-#{$i} {
-      margin-left: (100% / 12 * $i);
+      margin-left: (math.div(100%, 12) * $i);
     }
 
     .pull#{$prefix}-#{$i} {
-      margin-right: (-100% / 12 * $i);
+      margin-right: (math.div(-100%, 12) * $i);
     }
   }
 

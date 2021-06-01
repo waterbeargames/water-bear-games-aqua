@@ -1,4 +1,4 @@
-<nav class="nav js-nav">
+<nav class="nav js-nav{% if page.fileSlug == '' %} nav--no-logo nav--no-shadow no-transition{% endif %}">
   <div class="nav__container">
     <a class="nav__logo-link" href="/">
       {% svg_sprite "logo-bear", "nav__logo" %}

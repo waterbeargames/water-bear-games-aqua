@@ -7,3 +7,11 @@
     @extend %section-padding;
   }
 }
+
+%section-padding {
+  padding: space(3) space(2);
+
+  @include breakpoint($size-md) {
+    padding: space(6) space(3);
+  }
+}

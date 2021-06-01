@@ -2,6 +2,14 @@ const currentYear = () => {
   return new Date().getFullYear();
 }
 
+const gameLogo = (slug) => {
+  return (
+    `<div class="${slug}-logo">` +
+      svgSprite(slug, `${slug}-logo__svg`) +
+    `</div>`
+  );
+};
+
 // Combine given meta properties with defaults
 // Returns HTML string of meta tags
 const metaTags = (props = [], defaults = []) => {
@@ -37,4 +45,4 @@ const svgSprite = (name, classes) => {
   );
 };
 
-export { currentYear, metaTags, navMenuItem, svgSprite };
+export { currentYear, gameLogo, metaTags, navMenuItem, svgSprite };
